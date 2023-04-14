@@ -2,7 +2,8 @@
 //
 //        The method needs to return a boolean.
 //
-//        It should return true if the number is a palindrome number otherwise it should return false.
+//        It should return true if the number is a palindrome number 
+//         otherwise it should return false.
 //
 //        Check the tips below for more info about palindromes.
 //
@@ -30,7 +31,8 @@
 //        Declare and initialize another variable to store the reverse of a number,
 //        for example reverse = 0.
 //
-//        Extract the last digit of the given number by performing the modulo division (remainder).
+//        Extract the last digit of the given number by performing 
+//        the modulo division (remainder).
 //        Store the last digit to some variable say lastDigit = num % 10.
 //        Increase the place value of reverse by one.
 //        To increase place value multiply the reverse variable by 10 e.g. reverse = reverse * 10.
@@ -56,18 +58,14 @@
 
 public class NumberPalindrome {
 
-    public static boolean isPalindrome(int number) {
-        int reverse = 0;
-        int lastDigit = number % 10;
-        while (number != 0) {
-            int remainder = number % 10;
-            reverse = reverse * 10 + remainder;
-            number = number / 10;
-        }
-        int isNegative = number < 0 ? reverse * -1 : reverse;
-        boolean result = number == reverse;
-        return result;
+    public static boolean isPalindrome(int number) { 
+        int reverse = 0;  
+        int lastDigit =number%10;
+        int reverse = reverse * 10;
+
+  
+      }
 
 
-    }
+    
 }
