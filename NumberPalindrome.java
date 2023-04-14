@@ -21,10 +21,10 @@
 //
 //        Tip: Logic to check a palindrome number
 //
-//        Find the the reverse of the given number. Store it in some variable say reverse.
+//        Find the  reverse of the given number. Store it in some variable say reverse.
 //        Compare the number with reverse.
 //
-//        If both are the the same then the number is a palindrome otherwise it is not.
+//        If both are the  same then the number is a palindrome otherwise it is not.
 //
 //        Tip: Logic to reverse a number
 //
@@ -58,14 +58,20 @@
 
 public class NumberPalindrome {
 
-    public static boolean isPalindrome(int number) { 
-        int reverse = 0;  
-        int lastDigit =number%10;
-        int reverse = reverse * 10;
+    public static boolean isPalindrome(int number) {
+        if (number<0){
+            number =number * -1;
+        }
+        int reversed = 0;
+        int originNumber=number;
+        while (number != 0) {
+            int lastDigit = number % 10;
+            reversed = reversed * 10 + lastDigit;
+            number = number / 10;
+        }
+        return originNumber ==reversed;
 
-  
-      }
+    }
 
 
-    
 }
