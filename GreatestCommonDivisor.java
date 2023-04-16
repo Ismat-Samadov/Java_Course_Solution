@@ -40,19 +40,28 @@
 //
 //        NOTE: The method getGreatestCommonDivisor should be defined as public static like
 //        we have been doing so far in the course.
-//
-//        NOTE: Do not add a main method to the solution code.
+
 
 public class GreatestCommonDivisor {
 
-public static int getGreatestCommonDivisor(int first ,int second){
+    public static int getGreatestCommonDivisor(int first, int second) {
+        int min = Math.min(first, second);
+        int max = Math.max(first, second);
 
-    if (first <10 || second<10){
-        return -1;
-    }
-    else {
-    int min =Math.min(first,second);
+        int getGreatestCommonDivisor = 0;
 
+        if (first < 10 || second < 10) {
+            return -1;
+        } else if (max % min == 0) {
+            getGreatestCommonDivisor = min;
+        } else {
+            for (int i = 1; i < min; i++) {
+                if ((first % i == 0) && (second % i == 0)) {
+                    getGreatestCommonDivisor = i;
+                }
+            }
+
+        }
+        return getGreatestCommonDivisor;
     }
-}
 }
