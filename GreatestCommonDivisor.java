@@ -1,10 +1,8 @@
 //Write a method named getGreatestCommonDivisor with two parameters of type int named first and second.
-//
 //        If one of the parameters is < 10, the method should return -1 to indicate an invalid value.
-//
 //        The method should return the greatest common divisor of the two numbers (int).
-//
-//        The greatest common divisor is the largest positive integer that can fully divide each of the integers (i.e. without leaving a remainder).
+//        The greatest common divisor is the largest positive integer that can fully divide
+//        each of the integers (i.e. without leaving a remainder).
 //
 //
 //
@@ -40,12 +38,21 @@
 //
 //
 //
-//        NOTE: The method getGreatestCommonDivisor​ should be defined as public static like
+//        NOTE: The method getGreatestCommonDivisor should be defined as public static like
 //        we have been doing so far in the course.
 //
 //        NOTE: Do not add a main method to the solution code.
 
 public class GreatestCommonDivisor {
 
+public static int getGreatestCommonDivisor(int first ,int second){
 
+    if (first <10 || second<10){
+        return -1;
+    }
+    else {
+    int min =Math.min(first,second);
+
+    }
+}
 }
