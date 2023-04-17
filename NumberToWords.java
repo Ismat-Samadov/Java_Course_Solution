@@ -93,21 +93,65 @@ public class NumberToWords {
         if (number < 0) {
             System.out.println("Invalid Value");
         } else {
-
+            for (int i = 0; i < getDigitCount(number); i++) {
+                int remainder = number % 10;
+                int reversed = reverse(number);
+                int digit = reversed / 10;
+                switch (digit) {
+                    case 1:
+                        System.out.println("One");
+                        break;
+                    case 2:
+                        System.out.println("Two");
+                        break;
+                    case 3:
+                        System.out.println("Three");
+                        break;
+                    case 4:
+                        System.out.println("Four");
+                        break;
+                    case 5:
+                        System.out.println("Five");
+                        break;
+                    case 6:
+                        System.out.println("Six");
+                        break;
+                    case 7:
+                        System.out.println("Seven");
+                        break;
+                    case 8:
+                        System.out.println("Eight");
+                        break;
+                    case 9:
+                        System.out.println("Nine");
+                        break;
+                    case 0:
+                        System.out.println("Zero");
+                        break;
+                }
+            }
         }
     }
 
 
     public static int getDigitCount(int number) {
         int count = 0;
-        while (number != 0) {
-            number = number / 10;
-            count = count + 1;
+        if (number < 0) {
+            return -1;
+        } else if (number >= 0 && number <= 9) {
+            count = 1;
+        } else {
+            while (number != 0) {
+                number = number / 10;
+                count = count + 1;
+            }
         }
         return count;
+
     }
 
 
+    //  add negative value statement
     public static int reverse(int number) {
         int reversed = 0;
         while (number != 0) {
