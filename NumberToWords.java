@@ -85,9 +85,9 @@
 
 public class NumberToWords {
 
-    public static void numberToWords(int number){
+    public static void numberToWords(int number) {
 
-        boolean result=false;
+        boolean result = false;
 
 
         if (number < 0) {
@@ -98,15 +98,24 @@ public class NumberToWords {
     }
 
 
-
-    public static int getDigitCount(int number){
-        return 0;
+    public static int getDigitCount(int number) {
+        int count = 0;
+        while (number != 0) {
+            number = number / 10;
+            count = count + 1;
+        }
+        return count;
     }
 
 
-
-    public static int reverse(int number){
-        return 0;
+    public static int reverse(int number) {
+        int reversed = 0;
+        while (number != 0) {
+            int lastDigit = number % 10;
+            reversed = reversed * 10 + lastDigit;
+            number = number / 10;
+        }
+        return reversed;
     }
 
 }
