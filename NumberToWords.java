@@ -17,7 +17,8 @@
 //
 //        Repeat Steps 2 through 4 until the number is 0.
 //
-//        The logic above is correct, but in its current state, the words will be printed in reverse order.
+//        The logic above is correct, but in its current state, the words will be printed in 
+//          reverse order.
 //        For example, if the number is 234, the logic above will produce the output 
 //              "Four Three Two"
 //        instead of "Two Three Four". To overcome this problem, write a second method called 
@@ -156,7 +157,6 @@ public class NumberToWords {
     }
 
 
-    //  add negative value statement
     public static int reverse(int number) {
         int reversed = 0;
         while (number != 0) {
