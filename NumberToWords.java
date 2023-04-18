@@ -82,22 +82,25 @@
 //        NOTE: In total, you have to write 3 methods.
 //        NOTE: Do not add a main method to the solution code.
 
-
 public class NumberToWords {
 
-    public static void numberToWords(int number) {
-
-        boolean result = false;
-
-
-        if (number < 0) {
+    public static void numberToWords(int number){
+        if(number < 0){
             System.out.println("Invalid Value");
-        } else {
-            for (int i = 0; i < getDigitCount(number); i++) {
-                int remainder = number % 10;
-                int reversed = reverse(number);
-                int digit = reversed / 10;
-                switch (digit) {
+        }
+        else{
+            int rev = reverse(number);
+            int count = getDigitCount(number);
+
+            while(count > 0) {
+                int lastDigit = rev % 10;
+                rev = rev / 10;
+                count--;
+
+                switch (lastDigit) {
+                    case 0:
+                        System.out.println("Zero");
+                        break;
                     case 1:
                         System.out.println("One");
                         break;
@@ -125,41 +128,46 @@ public class NumberToWords {
                     case 9:
                         System.out.println("Nine");
                         break;
-                    case 0:
-                        System.out.println("Zero");
-                        break;
+                    default:
+                        System.out.println();
                 }
             }
         }
     }
 
+    public static int reverse(int number){
+        int rev = 0;
+        if(number < 0) {
+            number = -1 * number;
 
-    public static int getDigitCount(int number) {
-        int count = 0;
-        if (number < 0) {
-            return -1;
-        } else if (number >= 0 && number <= 9) {
-            count = 1;
-        } else {
-            while (number != 0) {
-                number = number / 10;
-                count = count + 1;
+            while (number > 0) {
+                int lastDigit = number % 10;
+                rev = lastDigit + rev * 10;
+                number /= 10;
             }
+            return - rev;
+        }
+
+        while (number > 0) {
+            int lastDigit = number % 10;
+            rev = lastDigit + rev * 10;
+            number /= 10;
+        }
+        return rev;
+    }
+
+    public static int getDigitCount(int num){
+        if(num < 0){
+            return -1;
+        }
+        else if(num == 0){
+            return 1;
+        }
+        int count = 0;
+        while(num > 0){
+            count++;
+            num /= 10;
         }
         return count;
-
     }
-
-
-    //  add negative value statement
-    public static int reverse(int number) {
-        int reversed = 0;
-        while (number != 0) {
-            int lastDigit = number % 10;
-            reversed = reversed * 10 + lastDigit;
-            number = number / 10;
-        }
-        return reversed;
-    }
-
 }
