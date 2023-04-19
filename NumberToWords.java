@@ -176,9 +176,7 @@ public class NumberToWords {
         }
         return count;
     }
-<<<<<<< HEAD
 }
-=======
 
 
     public static int reverse(int number) {
@@ -192,4 +190,3 @@ public class NumberToWords {
     }
 
 }
->>>>>>> 8c38d816585bce5c266ecbcc80d1acc2fd9a78c4
