@@ -46,7 +46,9 @@ public class FlourPacker {
         int sum = bigCount * 5 + smallCount * 1;
         int remainder = sum % goal;
         int left = smallCount - remainder;
-        if (bigCount >= 0 && smallCount >= 0 && goal >= 0) {
+        if (bigCount * 5 == goal && smallCount == 0) {
+            result = true;
+        } else if (bigCount >= 0 && smallCount >= 0 && goal >= 0) {
             if (bigCount + left == goal) {
                 result = true;
             }
