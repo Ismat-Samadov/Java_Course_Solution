@@ -54,13 +54,19 @@ public class FlourPacker {
         if (bigCount >= 0 && smallCount >= 0 && goal >= 0) {
             if (sum == goal && remainder == 0) {
                 result = true;
+            } else if (bigCount > goal && smallCount < goal && bigCount % goal != 0 && sum < goal) {
+                result = false;
             } else if (smallCount == 0 && bigCount > goal) {
+                result = false;
+            } else if (sum < goal) {
                 result = false;
             } else if (bigCount == 0 && smallCount == goal) {
                 result = true;
             } else if (bigCount == goal && smallCount == 0) {
                 result = true;
             } else if ((bigCount + small) == goal) {
+                result = true;
+            } else if ((bigCount % goal == 0 && sum > goal) || (bigCount == 0 && smallCount > goal)) {
                 result = true;
             } else if (remainder == 0 && sum == goal) {
                 result = true;
