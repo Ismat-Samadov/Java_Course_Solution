@@ -42,24 +42,26 @@ public class FlourPacker {
 
     public static boolean canPack(int bigCount, int smallCount, int goal) {
         boolean result = false;
+
         int sum = bigCount * 5 + smallCount;
 
         int remainder = sum % goal;
 
         int left = smallCount - remainder;
+        int right = bigCount * 5 - remainder;
 
         if (bigCount >= 0 && smallCount >= 0 && goal >= 0) {
-            if (bigCount * 5 + left == goal) {
+            if (sum == goal) {
                 result = true;
-            } else if (sum == goal && remainder == 0) {
-                result = true;
-            } else if (bigCount == 0 && smallCount == goal) {
-                result = true;
-            } else if (sum == goal) {
-                result = true;
-            } else if ((smallCount + bigCount * 5) == goal) {
+            } else if (bigCount * 5 == 0 && smallCount == goal) {
                 result = true;
             } else if (bigCount * 5 == goal && smallCount == 0) {
+                result = true;
+            } else if ((bigCount * 5 + left) == goal) {
+                result = true;
+            } else if ((bigCount * 5 + smallCount) == goal) {
+                result = true;
+            } else if ((bigCount * 5 - right) == 0) {
                 result = true;
             }
         } else {
