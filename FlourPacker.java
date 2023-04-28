@@ -38,25 +38,28 @@
 
 // NOTE: Do not add a main method to the solution code.
 
+
 public class FlourPacker {
 
-    public static boolean canPack(int bigCount, int smallCount, int goal) {
-        boolean result = false;
-        int bigCounted = bigCount * 5;
-        int sum =bigCounted + smallCount;
-        int remainder =sum % goal;
 
-        if (bigCounted >= 0 && smallCount >= 0 && goal >= 0) {
-            if (
-            (sum == goal && remainder == 0) ||
-            (bigCounted == 0 && smallCount == goal) ||
-            (bigCounted % goal == 0 && sum > goal) ||
-            (bigCounted + (smallCount - remainder) == goal) ||
-            (bigCounted == goal && smallCount == 0)
-            ) {
-                result = true;
-            }
+    public static boolean canPack(int bigCount, int smallCount, int goal){
+        boolean status=false;
+        int totalWeight = (bigCount*5)+smallCount;
+    
+        if(bigCount<0 || smallCount<0 || goal<0){
+            status=false;
+        }else if(totalWeight<goal){
+            status=false;
         }
-        return result;
+        else if(smallCount >= goal){
+            status=true;
+        }else if(goal>=5 && goal%5==0 && goal<=bigCount*5){
+            status=true;
+        }else if((goal-(bigCount*5))<=smallCount && (goal-(bigCount*5))>0 ){
+            status =true;
+        }else if((goal/5)<=bigCount && (goal%5)<=smallCount){
+            status=true;
+        }
+        return status;
     }
-}
+    }
