@@ -35,9 +35,10 @@
 public class LargestPrime {
     public static int getLargestPrime(int number) {
         int result = 0;
-        if (number < 0) {
+        if (number <= 0) {
             result = -1;
         }
+
 
         return result;
     }
