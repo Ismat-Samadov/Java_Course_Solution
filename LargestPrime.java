@@ -34,35 +34,20 @@
 
 public class LargestPrime {
     public static int getLargestPrime(int number) {
-        int result = 0;
-        if (number <= 0) {
-            result = -1;
+
+        if (number <= 0 || number <= 1) {
+            return -1;
+        } else {
+            int largestPrime = 2;
+            while (largestPrime < number) {
+                if (number % largestPrime != 0) {
+                    largestPrime++;
+                } else {
+                    number = number / largestPrime;
+
+                }
+            }
+            return number;
         }
-
-
-        return result;
     }
 }
-//
-//    public static int getLargestPrime(int number) {
-//        if (number <= 1) {
-//            return -1; // Return -1 for invalid input
-//        }
-//
-//        // Start with the largest possible prime factor, which is number itself
-//        int largestPrime = number;
-//
-//        // Keep dividing by smaller and smaller numbers until the result is prime
-//        for (int i = 2; i <= largestPrime / i; i++) {
-//            while (largestPrime % i == 0) {
-//                largestPrime /= i;
-//            }
-//        }
-//
-//        // If the remaining number is greater than 1, it is also prime
-//        if (largestPrime > 1) {
-//            return largestPrime;
-//        } else {
-//            return number; // If the input number itself is prime, return it
-//        }
-//    }
