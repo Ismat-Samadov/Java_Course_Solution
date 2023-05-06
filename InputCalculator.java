@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 
-
 //Write a method called inputThenPrintSumAndAverage that does not have any parameters.
 //
 //        The method should not return anything (void) and it needs to keep reading int numbers
@@ -62,8 +61,45 @@ import java.util.Scanner;
 //        NOTE: Do not add the main method to the solution code.
 
 
+import java.util.Scanner;
 
 public class InputCalculator {
 
-
+    public static void inputThenPrintSumAndAverage() {
+        Scanner scanner = new Scanner(System.in);
+        int sum = 0;
+        int count = 0;
+        while (scanner.hasNextInt()) {
+            int number = scanner.nextInt();
+            sum += number;
+            count++;
+        }
+        scanner.nextLine(); // consume the remaining newline character
+        long average = count == 0 ? 0 : Math.round((double) sum / count);
+        System.out.println("SUM = " + sum + " AVG = " + average);
+        scanner.close();
+    }
 }
+
+//
+//Here's how the method works:
+//
+//        The method creates a new instance of the Scanner class to read input from the keyboard.
+//        It initializes two variables, sum and count, to zero. sum will hold the sum of
+//        all entered numbers, and count will hold the number of entered numbers.
+//        The method enters a loop that reads integers from the input using the hasNextInt
+//        method of the Scanner class. If it is, the number is added to the sum variable and
+//        the count variable is incremented.
+//        If the input is not an integer, the loop is exited.
+//        The average is calculated by dividing the sum by the count, and rounding the result to
+//        the nearest integer using the Math.round method. If no integers were entered,
+//        the average is set to 0.
+//        The sum and average are printed to the console using the System.out.println method.
+//        The Scanner object is closed to release resources.
+//        Note that in order to prevent input errors, we use the scanner.nextLine() method
+//        to consume the newline character left in the input buffer after reading an integer.
+//
+//        This implementation will handle any number of input integers, and will calculate
+//        the sum and average correctly. If the user enters something that is not an integer,
+//        the loop will exit and the sum and average will be printed to the console
+//        with a value of 0 for both if no integers were entered.
