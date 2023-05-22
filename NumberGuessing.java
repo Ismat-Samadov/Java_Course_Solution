@@ -7,16 +7,9 @@ public class NumberGuessing {
     static Scanner scan = new Scanner(System.in);
 
     public static void game() {
-        while (true) {
-            int user_input = scan.nextInt();
-            int rng = rng();
-            if (user_input == rng) {
-                winner();
-                break;
-            } else if (user_input == 0) {
-                break;
-            }
-        }
+        String user_input = scan.next();
+
+
     }
 
     public static void exit() {
