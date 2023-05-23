@@ -1,11 +1,6 @@
 import java.util.Scanner;
 
 public class SortedArray {
-    public static void main(String[] args) {
-        int[] integers = getIntegers(5);
-        int[] sortedIntegers = sortIntegers(integers);
-        printArray(sortedIntegers);
-    }
 
     public static int[] getIntegers(int size) {
         System.out.println("Enter " + size + " integers:");
