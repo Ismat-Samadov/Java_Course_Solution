@@ -8,7 +8,7 @@ public class NumberGuessing {
 
     public static void game() {
         String user_input = scan.next();
-
+        int conv_input=Integer.parseInt(user_input);
 
     }
 
@@ -23,6 +23,6 @@ public class NumberGuessing {
     }
 
     public static int rng() {
-        return (int) (Math.random() * 1000);
+        return (int) (Math.random() * 100);
     }
 }
