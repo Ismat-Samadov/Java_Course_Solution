@@ -5,10 +5,8 @@ public class NumberGuessing {
 	public static void
 	guessingNumberGame()
 	{
-		// Scanner Class
 		Scanner sc = new Scanner(System.in);
 
-		// Generate the numbers
 		int number = 1 + (int)(100
 							* Math.random());
 
