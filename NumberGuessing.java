@@ -2,27 +2,21 @@ import java.util.Scanner;
 
 public class NumberGuessing {
 
-	// Function that implements the
-	// number guessing game
 	public static void
 	guessingNumberGame()
 	{
 		// Scanner Class
 		Scanner sc = new Scanner(System.in);
 
-<<<<<<< HEAD
 		// Generate the numbers
 		int number = 1 + (int)(100
 							* Math.random());
 
 		// Given K trials
 		int K = 5;
-=======
     public static void game() {
         String user_input = scan.next();
         int conv_input=Integer.parseInt(user_input);
->>>>>>> e3c90ea75c77619900032c428830050ebeede2e6
-
 		int i, guess;
 
 		System.out.println(
@@ -37,7 +31,6 @@ public class NumberGuessing {
 			System.out.println(
 				"Guess the number:");
 
-<<<<<<< HEAD
 			// Take input for guessing
 			guess = sc.nextInt();
 
@@ -72,18 +65,10 @@ public class NumberGuessing {
 		}
 	}
 
-	// Driver Code
 	public static void
 	main(String arg[])
 	{
-
-		// Function Call
 		guessingNumberGame();
 	}
-=======
-    public static int rng() {
-        return (int) (Math.random() * 100);
-    }
->>>>>>> e3c90ea75c77619900032c428830050ebeede2e6
 }
 
