@@ -1,5 +1,3 @@
-package Plylist;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 class Song {
